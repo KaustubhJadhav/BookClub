@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-w8^r^378*7&1-=@)1%q9r_*#!mumu&49ml&&_n3#5btq&fx(j=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://bookclub-lucc.onrender.com','localhost']
 
 
 # Application definition
