@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="home-container d-flex justify-content-center " style="min-height: 100vh;">
+    <div class="card shadow-lg p-5 mt-3 mb-3" style="width: 100%; max-width: 600px;">
+        <h1 class="display-3 mb-4 text-center">Welcome to the Virtual Book Club!</h1>
+        <p class="lead mb-5 text-center">Connect with fellow readers, explore book clubs, and share your love for reading.</p>
+        <div class="d-grid gap-3 d-sm-flex justify-content-center">
+            <a href="{% url 'club_list' %}" class="btn btn-outline-primary btn-lg" style="width: 150px;">View Clubs</a>
+            <a href="{% url 'book_list' %}" class="btn btn-outline-success btn-lg ml-3" style="width: 150px;">View Books</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

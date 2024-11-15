@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-4">
+    <h2 class="mb-4">Books</h2>
+    <a href="{% url 'book_create' %}" class="btn btn-primary mb-4">Add New Book</a>
+
+    <div class="row">
+        {% for book in books %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
+                        <p class="card-text"><strong>Genre:</strong> {{ book.genre }}</p>
+                        <p class="card-text"><strong>Summary:</strong> {{ book.summary|truncatewords:20 }}</p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a href="{% url 'book_update' book.id %}" class="btn btn-sm btn-outline-secondary me-2">Edit</a>
+                        <a href="{% url 'book_delete' book.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

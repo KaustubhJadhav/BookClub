@@ -1,0 +1,17 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="d-flex justify-content-center mt-5">
+    <div class="card p-4" style="background-color: #6fb1f8; border-radius: 10px; max-width: 500px; width: 100%;">
+        <h2 class="text-center">{% if club %}{{ club.name }}{% else %}Create Club{% endif %}</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="{% url 'club_list' %}" class="btn btn-secondary">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

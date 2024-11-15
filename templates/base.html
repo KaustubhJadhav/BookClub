@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Virtual Book Club{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #6c74c0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .home-container {
+            background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2)),
+            url("{% static 'images/background.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .navbar {
+            background-color: rgb(0, 23, 128);
+        }
+
+        table {
+            background-color: #0d1066;
+            color: #f0f0f0;
+            border-color: #bb9678;
+        }
+
+        th {
+            background-color: rgb(25, 8, 77);
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #3e0e97;
+            color: #fff;
+        }
+
+        tr:nth-child(odd) {
+            color: #fff;
+        }
+
+        .btn {
+            background-color: #4365e2;
+            color: #fff;
+            border: none;
+            width: 100px;
+        }
+
+        .btn:hover {
+            background-color: #1816a5;
+        }
+
+        a {
+            color: #f0f0f0;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        table.table-striped {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="{% url 'home' %}">Virtual Book Club</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'book_list' %}">Books</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'club_list' %}">Clubs</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>
